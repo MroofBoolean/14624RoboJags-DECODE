@@ -226,7 +226,7 @@ public class StarterBotTeleop extends OpMode {
         if (motorOn) {
             launcher.setPower(LAUNCHER_TARGET_VELOCITY);  // turn on
         } else {
-            launcher.setPower(0);  // turn off
+            launcher.setPower(STOP_SPEED);  // turn off
         }
 
         leftFeeder.setPower(gamepad1.right_trigger);
