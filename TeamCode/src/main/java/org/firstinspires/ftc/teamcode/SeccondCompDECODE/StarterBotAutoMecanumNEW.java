@@ -62,9 +62,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
  * main robot "loop," continuously checking for conditions that allow us to move to the next step.
  */
 
-@Autonomous(name="StarterBotAutoTEST", group="StarterBot")
+@Autonomous(name="StarterBotAutoNEW", group="StarterBot")
 //@Disabled
-public class StarterBotAutoMecanum extends OpMode
+public class StarterBotAutoMecanumNEW extends OpMode
 {
 
     final double FEED_TIME = 0.20; //The feeder servos run this long when a shot is requested.
@@ -472,12 +472,18 @@ public class StarterBotAutoMecanum extends OpMode
 
         leftBackDrive.setTargetPosition((int) targetPosition);
         rightBackDrive.setTargetPosition((int) targetPosition);
+        leftFrontDrive.setTargetPosition((int) targetPosition);
+        rightFrontDrive.setTargetPosition((int) targetPosition);
 
         leftBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftFrontDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightFrontDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         leftBackDrive.setPower(speed);
         rightBackDrive.setPower(speed);
+        leftFrontDrive.setPower(speed);
+        rightFrontDrive.setPower(speed);
 
         /*
          * Here we check if we are within tolerance of our target position or not. We calculate the
@@ -524,12 +530,18 @@ public class StarterBotAutoMecanum extends OpMode
 
         leftBackDrive.setTargetPosition((int) leftTargetPosition);
         rightBackDrive.setTargetPosition((int) rightTargetPosition);
+        leftFrontDrive.setTargetPosition((int) leftTargetPosition);
+        rightFrontDrive.setTargetPosition((int) rightTargetPosition);
 
         leftBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftFrontDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightFrontDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         leftBackDrive.setPower(speed);
         rightBackDrive.setPower(speed);
+        leftFrontDrive.setPower(speed);
+        rightFrontDrive.setPower(speed);
 
         if((Math.abs(leftTargetPosition - leftBackDrive.getCurrentPosition())) > (TOLERANCE_MM * TICKS_PER_MM)){
             driveTimer.reset();
